@@ -19,9 +19,9 @@ export function NewProject({ onSaveProject }) {
             projectDescription.trim() === '' ||
             projectDueDate.trim() === '') {
 
-            //Show Error Modal
+            modal.current.open()
+            return
         }
-
 
         onSaveProject({
             title: projectTitle,
@@ -32,7 +32,10 @@ export function NewProject({ onSaveProject }) {
 
     return (
         <>
-            <Modal ref={modal} />
+            <Modal ref={modal} buttonCaption="Close">
+                <h2>Invalid Input</h2>
+                <p>Please make sure to provide valid values</p>
+            </Modal>
             <div className="input-container">
                 <menu className="action-btns">
                     <li><button>Cancel</button></li>
