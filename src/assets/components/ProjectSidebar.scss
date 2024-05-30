@@ -1,0 +1,28 @@
+.sidebar {
+    grid-column: 1/1;
+    height: 100vh;
+    padding: 0 20px;
+    border-radius: 10px;
+
+    background: black;
+
+    color: white;
+
+    ul {
+        list-style: none;
+        padding: 0;
+
+        button.proj-btns {
+            border: none;
+            background-color: black;
+            width: 100%;
+            margin-bottom: 10px;
+        }
+
+        button.proj-btns:hover {
+            background-color: rgb(72, 67, 67);
+            transition: background-color 0.3s;
+        }
+    }
+
+}
