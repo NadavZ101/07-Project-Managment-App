@@ -1,7 +1,7 @@
 import { useState } from "react"
 import { Input } from "./Input"
 
-export function ProjectsSidebar({ onCreateProject, projects }) {
+export function ProjectsSidebar({ onCreateProject, projects, onSelectProject }) {
 
     return (
         <aside className="sidebar">
@@ -13,7 +13,7 @@ export function ProjectsSidebar({ onCreateProject, projects }) {
                 {projects.length > 0 &&
                     projects.map(project =>
                         <li key={project.id}>
-                            <button className="proj-btns">{project.title}</button>
+                            <button onClick={() => onSelectProject(project.id)} className="proj-btns">{project.title}</button>
                         </li>)
                 }
             </ul>

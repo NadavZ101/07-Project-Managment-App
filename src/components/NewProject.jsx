@@ -2,7 +2,7 @@ import { useRef } from "react";
 import { Input } from "./Input";
 import { Modal } from "./Modal";
 
-export function NewProject({ onSaveProject }) {
+export function NewProject({ onSaveProject, onCancelProject }) {
 
     const modal = useRef()
 
@@ -37,8 +37,9 @@ export function NewProject({ onSaveProject }) {
                 <p>Please make sure to provide valid values</p>
             </Modal>
             <div className="input-container">
+                <h1>Create A New Project</h1>
                 <menu className="action-btns">
-                    <li><button>Cancel</button></li>
+                    <li><button onClick={onCancelProject}>Cancel</button></li>
                     <li><button onClick={handleSave}>Save</button></li>
                 </menu>
 

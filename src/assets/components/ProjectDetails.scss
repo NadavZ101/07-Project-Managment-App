@@ -1,0 +1,27 @@
+.project-details {
+    display: flex;
+    flex-direction: column;
+    margin-left: 15px;
+
+    .action {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        margin: 20px 0;
+
+        h1 {
+            margin: 0;
+        }
+    }
+
+    .date {
+        color: rgb(152, 149, 149);
+    }
+
+    hr {
+        color: grey;
+        width: 100%;
+    }
+
+}
