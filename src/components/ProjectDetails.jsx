@@ -21,6 +21,7 @@ export function ProjectDetails({ project, onRemove, onAddTask, onDeleteTask, tas
                 </header>
                 <hr></hr>
                 <Tasks
+                    project={project}
                     onAddTask={onAddTask}
                     onDeleteTask={onDeleteTask}
                     tasks={tasks}

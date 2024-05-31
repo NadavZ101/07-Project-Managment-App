@@ -1,6 +1,7 @@
 import { NewTask } from "./NewTask";
 
-export function Tasks({ tasks, onAddTask, onDeleteTask }) {
+export function Tasks({ project, tasks, onAddTask, onDeleteTask }) {
+    console.log("🚀 ~ Tasks ~ tasks:", tasks)
 
 
     return <section className="tasks-container">
@@ -14,12 +15,14 @@ export function Tasks({ tasks, onAddTask, onDeleteTask }) {
 
         {tasks.length > 0 &&
             <ul>
-                {tasks.map(task => <li key={task.id} className="task">
-                    <span>{task.text}</span>
-                    <button onClick={() => onDeleteTask(task.id)}>Clear</button>
-                </li>
-                )
-                }
+                {tasks.map(task =>
+                    task.projectId === project.id && (
+                        <li key={task.id} className="task">
+                            <span>{task.text}</span>
+                            <button onClick={() => onDeleteTask(task.id)}>Clear</button>
+                        </li>
+                    )
+                )}
             </ul>
         }
     </section>
